@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed; //Speed of movement
-    public float maxSpeed;
-    public float jumpForce;
+    public float maxSpeed; //Our max speed
+    public float jumpForce; //The amount of jump
     public Vector3 distanceDown;
 
     [HideInInspector] public bool isWalking;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     Animator animator; //Our player's animator
 
-    Rigidbody2D rb;
+    Rigidbody2D rb; //Our rigidbody 2D
 
     //Map movement to a selected key
     public KeyCode right = KeyCode.RightArrow;
@@ -54,13 +54,14 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(right))
             MoveRight();
-        else if (Input.GetKey(left))
+        if (Input.GetKey(left))
             MoveLeft();
-        else if (Input.GetKeyDown(jump) && grounded == true)
+        if (Input.GetKeyDown(jump) && grounded == true)
             Jump();
         else isWalking = false;
     }
 
+    //Moving to the right
     public void MoveRight()
     {
         isWalking = true;
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Moving to the left
     public void MoveLeft()
     {
         isWalking = true;
@@ -84,11 +86,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Jumping
     public void Jump()
     {
         rb.velocity += new Vector2(0, jumpForce);
     }
 
+    //Flip the image over the y axis
     public void Flip(DIRECTION direction)
     {
         Vector3 xscale;

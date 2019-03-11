@@ -4490,6 +4490,7 @@ GameObject:
   - component: {fileID: 2067784122}
   - component: {fileID: 2067784125}
   - component: {fileID: 2067784124}
+  - component: {fileID: 2067784123}
   m_Layer: 0
   m_Name: Blob (Player)
   m_TagString: Untagged
@@ -4579,6 +4580,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &2067784123
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067784119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.16667366}
+  serializedVersion: 2
+  m_Radius: 0.33332634
 --- !u!50 &2067784124
 Rigidbody2D:
   serializedVersion: 4
@@ -4615,7 +4632,7 @@ MonoBehaviour:
   speed: 0.75
   maxSpeed: 5
   jumpForce: 5
-  distanceDown: {x: 0, y: 1000, z: 0}
+  distanceDown: {x: 0, y: 0, z: 0}
   isWalking: 0
   grounded: 0
   right: 275
