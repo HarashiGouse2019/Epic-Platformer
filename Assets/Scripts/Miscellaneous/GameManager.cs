@@ -9,19 +9,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    //Enumerator for Scene Management
-    public enum SceneIndex
-    {
-        TITLE,
-        LEVEL1,
-        LEVEL2,
-        LEVEL3,
-        LEVEL4,
-        LEVEL5,
-        WINSCREEN,
-        LOSESCREEN
-    }
-
     // Start is called before the first frame update
     private void Awake()
     {
