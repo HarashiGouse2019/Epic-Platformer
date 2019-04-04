@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Spawn : MonoBehaviour
 {
-    private static Player_Spawn instance;
+    public static Player_Spawn instance;
 
-    Vector2 SPAWN_POINT_POSITION;
-    Vector2 NEXT_ROOM_SPAWN_POSITION;
-    public float posx = 0;
-    public float posy = 0;
+    public Vector3 coordinates;
 
     void Awake()
     {
@@ -21,18 +19,12 @@ public class Player_Spawn : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Instantiate(GameManager.instance.playerPrefab);
+        coordinates = new Vector3(GameManager.instance.posx, GameManager.instance.posy, 0);
+        Debug.Log("Coordinates: " + coordinates);
+        GameManager.instance.playerPrefab.transform.position = coordinates;
+        Debug.Log("Player was created");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        SPAWN_POINT_POSITION = new Vector2(posx, posy);
-        NEXT_ROOM_SPAWN_POSITION = new Vector2(posx, posy);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

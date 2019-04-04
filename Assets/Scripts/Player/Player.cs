@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    
+
     public float speed; //Speed of movement
     public float maxSpeed; //Our max speed
     public float setMaxSpeed;
@@ -51,6 +53,12 @@ public class Player : MonoBehaviour
     [Space]
 
     IEnumerator coroutine;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    //    Camera_Follow.camera.target = gameObject.transform;
+    }
 
     // Start is called before the first frame update
     void Start()

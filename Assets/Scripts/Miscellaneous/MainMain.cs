@@ -7,7 +7,7 @@ public class MainMain : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        GameManager.instance.Goto_Scene("Level1-1");
     }
 
     public void ReturnToTitleScreen()
