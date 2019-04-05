@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    
 
     public float speed; //Speed of movement
     public float maxSpeed; //Our max speed

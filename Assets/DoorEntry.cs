@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DoorEntry : MonoBehaviour
 {
+    public static DoorEntry instance;
+
     public float value_x;
     public float value_y;
     public string scene_name;
+    public bool allowSpawn = true;
 
     public Player player;
 

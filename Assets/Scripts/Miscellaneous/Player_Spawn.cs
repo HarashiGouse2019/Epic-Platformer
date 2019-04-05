@@ -19,12 +19,12 @@ public class Player_Spawn : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Instantiate(GameManager.instance.playerPrefab);
-        coordinates = new Vector3(GameManager.instance.posx, GameManager.instance.posy, 0);
-        Debug.Log("Coordinates: " + coordinates);
-        GameManager.instance.playerPrefab.transform.position = coordinates;
-        Debug.Log("Player was created");
+        
+            Instantiate(GameManager.instance.playerPrefab);
+            coordinates = new Vector3(GameManager.instance.posx, GameManager.instance.posy, 0);
+            Debug.Log("Coordinates: " + coordinates);
+            GameManager.instance.playerPrefab.transform.position = coordinates;
+            Debug.Log("Player was created");
+        
     }
-
-  
 }

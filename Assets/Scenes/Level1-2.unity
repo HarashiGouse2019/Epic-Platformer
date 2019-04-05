@@ -186,6 +186,7 @@ MonoBehaviour:
   value_x: 0
   value_y: -3.5
   scene_name: Level1-3
+  allowSpawn: 1
   player: {fileID: 6885792737900912365, guid: 15dd9d1e06cb4864bbf4a441235c7982, type: 3}
 --- !u!212 &663523067
 SpriteRenderer:
@@ -719,7 +720,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

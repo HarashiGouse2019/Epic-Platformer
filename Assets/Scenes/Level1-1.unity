@@ -172,6 +172,7 @@ MonoBehaviour:
   value_x: -10.02417
   value_y: 1
   scene_name: Level1-2
+  allowSpawn: 1
   player: {fileID: 6885792737900912365, guid: 15dd9d1e06cb4864bbf4a441235c7982, type: 3}
 --- !u!212 &311197507
 SpriteRenderer:

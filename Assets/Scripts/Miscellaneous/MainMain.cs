@@ -7,6 +7,7 @@ public class MainMain : MonoBehaviour
 {
     public void Play()
     {
+        GameManager.instance.GUI_ACTIVE = true;
         GameManager.instance.Goto_Scene("Level1-1");
     }
 
