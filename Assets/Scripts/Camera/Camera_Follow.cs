@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Camera_Follow : MonoBehaviour
 {
-    public static Camera_Follow camera;
-
     //The Targeted GameObject to manipulate its position through it's Transform Component
     public GameObject target;
 

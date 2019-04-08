@@ -55,16 +55,19 @@ public class GameManager : MonoBehaviour
         //Testing to see if AdjustHealth works
         if (Input.GetKey(KeyCode.Backspace)) AdjustHealth(-1, 1);
         if (Input.GetKey(KeyCode.Return)) AdjustHealth(1, 1);
+
+        
     }
 
     public void Goto_Scene(string scene_name) {
         scene_name = Scene_Name;
         if (scene_name != null) SceneManager.LoadScene(scene_name);
+        
     }
 
     void Die()
     {
-        DestroyImmediate(this.playerPrefab, true);
+        healthUIParent.gameObject.SetActive(GUI_ACTIVE);
         SceneManager.LoadScene("Lose_Screen");
     }
 
@@ -86,6 +89,12 @@ public class GameManager : MonoBehaviour
                 currentHealth = healthUI.fillAmount;
                 break;
         }
-        if (currentHealth <= 0) Die();
+
+        if (healthUI.fillAmount == 0)
+        {
+            GUI_ACTIVE = false;
+            Die();
+        }
+
     }
 }
