@@ -4272,7 +4272,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.25485048, g: 0.46024927, b: 0.7830189, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -4601,8 +4601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value_x: 0
-  value_y: -3.5
-  scene_name: Level1-5
+  value_y: 0
+  scene_name: Congratulations
   allowSpawn: 0
   player: {fileID: 6885792737900912365, guid: 15dd9d1e06cb4864bbf4a441235c7982, type: 3}
 --- !u!212 &1843951774

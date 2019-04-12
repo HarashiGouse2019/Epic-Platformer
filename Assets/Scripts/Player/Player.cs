@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
 
     public float speed; //Speed of movement
     public float maxSpeed; //Our max speed
@@ -55,7 +57,15 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        } else
+        {
+            Destroy(gameObject);
+        }
+        
     //    Camera_Follow.camera.target = gameObject.transform;
     }
 
@@ -94,6 +104,17 @@ public class Player : MonoBehaviour
             totalJumps = SetValueOfJjumps;
         }
 
+        if (GameManager.instance.currentHealth <= 0 || GameManager.instance.Scene_Name == "Congratulations")
+            Destroy(gameObject);
+           
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GameManager.instance.AdjustHealth(-1, 2);
+        }
     }
 
     //Moving to the right

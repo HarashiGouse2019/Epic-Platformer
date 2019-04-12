@@ -22,10 +22,10 @@ public class DoorEntry : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (collision.gameObject.name == "Player(Clone)")
+            if (collision.gameObject.tag == "Player")
             {
-                GameManager.instance.posx = value_x;
-                GameManager.instance.posy = value_y;
+                GameManager.instance.posx = this.value_x;
+                GameManager.instance.posy = this.value_y;
                 Player_Spawn.instance.coordinates = new Vector3(GameManager.instance.posx, GameManager.instance.posy, 0);
                 collision.gameObject.transform.position = Player_Spawn.instance.coordinates;
 

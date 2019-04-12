@@ -9,24 +9,31 @@ public class Patrol : MonoBehaviour
 
     private bool movingRight = true;
 
-    public Transform groundDetection;
-
     private void Update()
     {
-        transform.Translate(Vector2.right * speed);
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
 
-        if(groundInfo.collider == false)
+         transform.Translate(Vector2.right * speed);
+      
+    }
+
+    private void OnTriggerStay2D(Collider2D groundInfo)
+    {
+        if (groundInfo.gameObject.name == "trigger")
         {
             if (movingRight == true)
             {
-                transform.eulerAngles = new Vector3(0, -100, 0);
+                transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false;
-            } else
+            }
+            else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
+        }
+        if (groundInfo.gameObject.name == "GroundCheck")
+        {
+            Destroy(this.gameObject);
         }
     }
 }

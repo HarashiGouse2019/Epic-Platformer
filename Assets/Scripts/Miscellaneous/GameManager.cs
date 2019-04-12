@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Backspace)) AdjustHealth(-1, 1);
         if (Input.GetKey(KeyCode.Return)) AdjustHealth(1, 1);
 
-        
+        Debug.Log("GameManager Set Coordinates: " + posx + "," + posy + ")");
     }
 
     public void Goto_Scene(string scene_name) {
